@@ -45,9 +45,9 @@ class ViewController: UIViewController {
 
     @IBAction func jogar(_ sender: UIButton) {
         
-        if verificaPreenchimento() {
+        if jogo.verificaPreenchimento(tf_1player1: self.tf_1player1.text!, tf_2player1: self.tf_2player1.text!, tf_1player2: self.tf_1player2.text!, tf_2player2: self.tf_2player2.text!) {
             
-            if verificaJogadaValida() {
+            if jogo.verificaJogadaValida(tf_1player1: self.tf_1player1.text!, tf_2player1: self.tf_2player1.text!, tf_1player2: self.tf_1player2.text!, tf_2player2: self.tf_2player2.text!) {
                 
                 
             }
@@ -58,51 +58,6 @@ class ViewController: UIViewController {
     }
 
     
-    func verificaPreenchimento() -> Bool{
-        
-        var preenchimentoDeTodasAsApostas = true
-        
-        if (tf_1player1.text?.isEmpty)! {
-            preenchimentoDeTodasAsApostas = false
-        }
-        if (tf_2player1.text?.isEmpty)! {
-            preenchimentoDeTodasAsApostas = false
-        }
-        if (tf_1player2.text?.isEmpty)! {
-            preenchimentoDeTodasAsApostas = false
-        }
-        if (tf_2player2.text?.isEmpty)! {
-            preenchimentoDeTodasAsApostas = false
-        }
-        
-        print(preenchimentoDeTodasAsApostas)
-        return preenchimentoDeTodasAsApostas
-    }
     
-    func verificaJogadaValida() -> Bool{
-        
-        var jogadaValida = true
-        
-        if ( (Int(tf_1player1.text!)! < 1) || (Int(tf_1player1.text!)! > 6)) {
-            
-            jogadaValida = false
-        }
-        if ( (Int(tf_2player1.text!)! < 1) || (Int(tf_2player1.text!)! > 6)) {
-            
-            jogadaValida = false
-        }
-        if ( (Int(tf_1player2.text!)! < 1) || (Int(tf_1player2.text!)! > 6)) {
-            
-            jogadaValida = false
-        }
-        if ( (Int(tf_2player2.text!)! < 1) || (Int(tf_2player2.text!)! > 6)) {
-            
-            jogadaValida = false
-        }
-    
-        print(jogadaValida)
-        return jogadaValida
-        
-    }
 }
 

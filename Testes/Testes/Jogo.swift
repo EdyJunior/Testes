@@ -33,6 +33,51 @@ class Jogo: NSObject {
         
     }
     
+    func verificaPreenchimento(tf_1player1: String, tf_2player1: String, tf_1player2: String, tf_2player2: String) -> Bool{
+        
+        var preenchimentoDeTodasAsApostas = true
+        
+        if (tf_1player1.isEmpty) {
+            preenchimentoDeTodasAsApostas = false
+        }
+        if (tf_2player1.isEmpty) {
+            preenchimentoDeTodasAsApostas = false
+        }
+        if (tf_1player2.isEmpty) {
+            preenchimentoDeTodasAsApostas = false
+        }
+        if (tf_2player2.isEmpty) {
+            preenchimentoDeTodasAsApostas = false
+        }
+        
+        print(preenchimentoDeTodasAsApostas)
+        return preenchimentoDeTodasAsApostas
+    }
     
+    func verificaJogadaValida(tf_1player1: String, tf_2player1: String, tf_1player2: String, tf_2player2: String) -> Bool{
+        
+        var jogadaValida = true
+        
+        if ( (Int(tf_1player1)! < 1) || (Int(tf_1player1)! > 6)) {
+            
+            jogadaValida = false
+        }
+        if ( (Int(tf_2player1)! < 1) || (Int(tf_2player1)! > 6)) {
+            
+            jogadaValida = false
+        }
+        if ( (Int(tf_1player2)! < 1) || (Int(tf_1player2)! > 6)) {
+            
+            jogadaValida = false
+        }
+        if ( (Int(tf_2player2)! < 1) || (Int(tf_2player2)! > 6)) {
+            
+            jogadaValida = false
+        }
+        
+        print(jogadaValida)
+        return jogadaValida
+        
+    }
 
 }
