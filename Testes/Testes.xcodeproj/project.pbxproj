@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7E4F1861DDF42620029797D /* Jogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E4F1851DDF42620029797D /* Jogo.swift */; };
 		CE1D9BA11DDF3A3000CC2F10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D9BA01DDF3A3000CC2F10 /* AppDelegate.swift */; };
 		CE1D9BA31DDF3A3000CC2F10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D9BA21DDF3A3000CC2F10 /* ViewController.swift */; };
 		CE1D9BA61DDF3A3000CC2F10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1D9BA41DDF3A3000CC2F10 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7E4F1851DDF42620029797D /* Jogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jogo.swift; sourceTree = "<group>"; };
 		CE1D9B9D1DDF3A3000CC2F10 /* Testes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1D9BA01DDF3A3000CC2F10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1D9BA21DDF3A3000CC2F10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				CE1D9BA01DDF3A3000CC2F10 /* AppDelegate.swift */,
 				CE1D9BA21DDF3A3000CC2F10 /* ViewController.swift */,
+				A7E4F1851DDF42620029797D /* Jogo.swift */,
 				CE1D9BA41DDF3A3000CC2F10 /* Main.storyboard */,
 				CE1D9BA71DDF3A3000CC2F10 /* Assets.xcassets */,
 				CE1D9BA91DDF3A3000CC2F10 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				CE1D9BA31DDF3A3000CC2F10 /* ViewController.swift in Sources */,
 				CE1D9BA11DDF3A3000CC2F10 /* AppDelegate.swift in Sources */,
+				A7E4F1861DDF42620029797D /* Jogo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +516,7 @@
 				CE1D9BC71DDF3A3100CC2F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE1D9BC81DDF3A3100CC2F10 /* Build configuration list for PBXNativeTarget "TestesTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +525,7 @@
 				CE1D9BCA1DDF3A3100CC2F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE1D9BCB1DDF3A3100CC2F10 /* Build configuration list for PBXNativeTarget "TestesUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +534,7 @@
 				CE1D9BCD1DDF3A3100CC2F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
