@@ -26,27 +26,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var resultadoLabel: UILabel!
     
+    let jogo = Jogo()
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         let back = #imageLiteral(resourceName: "back")
         
         self.view.backgroundColor = UIColor(patternImage: back.imageWithAlpha(alpha: 0.15))
+        
+        let val = self.jogo.sorteio()
+        print(val)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func jogar(_ sender: UIButton) {
+        
+        if jogo.verificaPreenchimento(tf_1player1: self.tf_1player1.text!, tf_2player1: self.tf_2player1.text!, tf_1player2: self.tf_1player2.text!, tf_2player2: self.tf_2player2.text!) {
+            
+            if jogo.verificaJogadaValida(tf_1player1: self.tf_1player1.text!, tf_2player1: self.tf_2player1.text!, tf_1player2: self.tf_1player2.text!, tf_2player2: self.tf_2player2.text!) {
+                
+            }
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
 }
 
 extension UIImage {
