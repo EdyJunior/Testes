@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var player1: UIImageView!
     
@@ -28,7 +28,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let back = #imageLiteral(resourceName: "back")
+        
+        self.view.backgroundColor = UIColor(patternImage: back.imageWithAlpha(alpha: 0.15))
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +41,21 @@ class ViewController: UIViewController {
 
     @IBAction func jogar(_ sender: UIButton) {
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
 
+extension UIImage {
+    
+    func imageWithAlpha(alpha: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: alpha)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+}
