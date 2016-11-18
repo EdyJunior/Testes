@@ -26,9 +26,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultadoLabel: UILabel!
     
+    let jogo = Jogo()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let val = self.jogo.sorteio()
+        print(val)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
