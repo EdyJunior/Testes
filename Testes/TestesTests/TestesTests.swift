@@ -33,6 +33,13 @@ class TestesTests: XCTestCase {
         }
     }
     
+    func testeSorteio(){
+        let valor = Jogo.shared.valorDado
+        Jogo.shared.sorteio()
+        XCTAssertNotEqual(valor, Jogo.shared.valorDado, "O valor sorteado deveria ter mudado")
+    }
+    
+    
     func testVerificaJogadaValida(){
         
         let oneText_1 = "1"
