@@ -9,30 +9,22 @@
 import UIKit
 
 class Jogo: NSObject {
-    
-    var valorDado: Int?
-    var imagemDado: UIImage?
-    static let shared = Jogo()
-    
-    override init() {
-        self.valorDado = 1
-        self.imagemDado = UIImage(named: "\(self.valorDado)")
-    }
-    
-    func sorteio(){
-        
-        let valor = arc4random_uniform(6)+1
-        
-        self.valorDado = Int(valor)
-        
-    }
 
+    var valorDado: Int = 1
+    var imagemDado = UIImage(named: "1")
+    static let shared = Jogo()
+
+    func sorteio(){
+
+        let valor = arc4random_uniform(6)+1
+
+        self.valorDado = Int(valor)
+    }
     
     func mudarImagem(nome: String, naView view: UIImageView){
         
         self.imagemDado = UIImage(named: nome)
         view.image = self.imagemDado
-        
     }
     
     func verificaPreenchimento(tf_1player1: String, tf_2player1: String, tf_1player2: String, tf_2player2: String) -> Bool{
@@ -79,5 +71,37 @@ class Jogo: NSObject {
         
         print(jogadaValida)
         return jogadaValida
+    }
+    
+    func checaVencedor(tf_1player1: String, tf_2player1: String, tf_1player2: String, tf_2player2: String) -> Int {
+        
+        var pri = 0
+        var seg = 0
+        
+        if tf_1player1 == "\(valorDado)" {
+            pri += 1
+        }
+        if tf_2player1 == "\(valorDado)" {
+            pri += 1
+        }
+        if tf_1player2 == "\(valorDado)" {
+            seg += 1
+        }
+        if tf_2player2 == "\(valorDado)" {
+            seg += 1
+        }
+        print("valor = \(valorDado) tf1 = \(tf_1player1)")
+        return pri > seg ? 1 : (pri < seg ? 2 : 0)
+    }
+    
+    func mostraVencedor(vencedor: Int) -> String {
+        
+        if vencedor == 0 {
+            return "Empate!"
+        } else if vencedor == 1 {
+            return "Seu Madruga venceu!"
+        } else {
+            return "Wolverine venceu!"
+        }
     }
 }
