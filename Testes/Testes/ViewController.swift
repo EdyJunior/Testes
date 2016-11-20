@@ -36,8 +36,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.view.backgroundColor = UIColor(patternImage: back.imageWithAlpha(alpha: 0.15))
         
-        let val = self.jogo.sorteio()
-        print(val)
+        self.Dado.image = UIImage(named: "1")
+        
+
         
     }
 
