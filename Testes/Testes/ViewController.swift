@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var resultadoLabel: UILabel!
     
     let jogo = Jogo()
+    var numeroSorteado: Int?
     
     override func viewDidLoad() {
         
@@ -60,6 +61,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 extension UIImage {
