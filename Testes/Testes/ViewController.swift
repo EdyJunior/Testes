@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var resultadoLabel: UILabel!
     
     let jogo = Jogo()
+    var numeroSorteado: Int?
     
     override func viewDidLoad() {
         
@@ -36,8 +37,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.view.backgroundColor = UIColor(patternImage: back.imageWithAlpha(alpha: 0.15))
         
-        let val = self.jogo.sorteio()
-        print(val)
+        self.Dado.image = UIImage(named: "1")
+        
+
         
     }
 
@@ -51,6 +53,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             if jogo.verificaJogadaValida(tf_1player1: self.tf_1player1.text!, tf_2player1: self.tf_2player1.text!, tf_1player2: self.tf_1player2.text!, tf_2player2: self.tf_2player2.text!) {
                 
+                //------------------------------
+                //------sorteia e exibe o dado--
+                
+                self.jogo.sorteio()
+                self.numeroSorteado = self.jogo.valorDado
+                print(self.numeroSorteado!)
+                self.jogo.mudarImagem(nome: "\(self.numeroSorteado!)", naView: self.Dado)
+
+                
+                
             }
         }
     }
@@ -59,6 +71,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 extension UIImage {

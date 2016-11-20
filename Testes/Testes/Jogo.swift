@@ -12,23 +12,25 @@ class Jogo: NSObject {
     
     var valorDado: Int?
     var imagemDado: UIImage?
+    static let shared = Jogo()
     
     override init() {
         self.valorDado = 1
         self.imagemDado = UIImage(named: "\(self.valorDado)")
     }
     
-    func sorteio() -> Int{
+    func sorteio(){
         
         let valor = arc4random_uniform(6)+1
         
-        return Int(valor)
-    
+        self.valorDado = Int(valor)
+        
     }
+
     
-    func changeImage(name: String, inView view: UIImageView){
-    
-        self.imagemDado = UIImage(named: name)
+    func mudarImagem(nome: String, naView view: UIImageView){
+        
+        self.imagemDado = UIImage(named: nome)
         view.image = self.imagemDado
         
     }
