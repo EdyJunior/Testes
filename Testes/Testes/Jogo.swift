@@ -28,9 +28,9 @@ class Jogo: NSObject {
     }
 
     
-    func changeImage(name: String, inView view: UIImageView){
-    
-        self.imagemDado = UIImage(named: name)
+    func mudarImagem(nome: String, naView view: UIImageView){
+        
+        self.imagemDado = UIImage(named: nome)
         view.image = self.imagemDado
         
     }

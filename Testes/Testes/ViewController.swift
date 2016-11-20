@@ -53,6 +53,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             if jogo.verificaJogadaValida(tf_1player1: self.tf_1player1.text!, tf_2player1: self.tf_2player1.text!, tf_1player2: self.tf_1player2.text!, tf_2player2: self.tf_2player2.text!) {
                 
+                //------------------------------
+                //------sorteia e exibe o dado--
+                
+                self.jogo.sorteio()
+                self.numeroSorteado = self.jogo.valorDado
+                print(self.numeroSorteado!)
+                self.jogo.mudarImagem(nome: "\(self.numeroSorteado!)", naView: self.Dado)
+
+                
+                
             }
         }
     }
