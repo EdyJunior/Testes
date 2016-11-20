@@ -39,6 +39,20 @@ class TestesTests: XCTestCase {
         XCTAssertNotEqual(valor, Jogo.shared.valorDado, "O valor sorteado deveria ter mudado")
     }
     
+//    func mudarImagem(nome: String, naView view: UIImageView){
+//        
+//        self.imagemDado = UIImage(named: nome)
+//        view.image = self.imagemDado
+//        
+//    }
+    
+    func testMudaImagem(){
+    
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "0")
+        Jogo.shared.mudarImagem(nome: "\(Jogo.shared.valorDado)", naView: imageView)
+        XCTAssertNotEqual(UIImage(named: "0"), imageView.image, "Algo esta errado, a imagem não mudou" )
+    }
     
     func testVerificaJogadaValida(){
         
