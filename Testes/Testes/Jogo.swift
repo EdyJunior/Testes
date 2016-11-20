@@ -12,7 +12,7 @@ class Jogo: NSObject {
     
     var valorDado: Int?
     var imagemDado: UIImage?
-    
+    static let shared = Jogo()
     override init() {
         self.valorDado = 1
         self.imagemDado = UIImage(named: "\(self.valorDado)")

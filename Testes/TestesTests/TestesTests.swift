@@ -33,4 +33,25 @@ class TestesTests: XCTestCase {
         }
     }
     
+    func testVerificaJogadaValida(){
+        
+        let oneText_1 = "1"
+        let oneText_2 = "2"
+        let twoText_1 = "3"
+        let twoText_2 = "4"
+        
+        XCTAssertTrue(Jogo.shared.verificaJogadaValida(tf_1player1: oneText_1, tf_2player1: oneText_2, tf_1player2: twoText_1, tf_2player2: twoText_2))
+        
+    }
+    
+    func testVerificaPreenchimento(){
+        
+        let oneText_1 = "1"
+        let oneText_2 = "2"
+        let twoText_1 = "3"
+        let twoText_2 = "4"
+        
+        XCTAssertTrue(Jogo.shared.verificaPreenchimento(tf_1player1: oneText_1, tf_2player1: oneText_2, tf_1player2: twoText_1, tf_2player2: twoText_2))
+    }
+    
 }
