@@ -75,4 +75,20 @@ class TestesTests: XCTestCase {
         XCTAssertTrue(Jogo.shared.verificaPreenchimento(tf_1player1: oneText_1, tf_2player1: oneText_2, tf_1player2: twoText_1, tf_2player2: twoText_2))
     }
     
+    func testChecaVencedor() {
+        
+        let oneText_1 = "1"
+        let oneText_2 = "2"
+        let twoText_1 = "3"
+        let twoText_2 = "4"
+        
+        Jogo.shared.valorDado = 1
+        
+        XCTAssertEqual(Jogo.shared.checaVencedor(tf_1player1: oneText_1, tf_2player1: oneText_2, tf_1player2: twoText_1, tf_2player2: twoText_2), 1)
+    }
+    
+    func testMostraVencedor() {
+        
+        XCTAssertEqual(Jogo.shared.mostraVencedor(vencedor: 0), "Empate!")
+    }
 }
